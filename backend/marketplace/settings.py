@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-s^zx42zw1)f)3mjg2#l0%z650iuwr&s*f+5+ubkm=$+^sv*51r
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["savoro-backend.onrender.com"]
 
 
 
