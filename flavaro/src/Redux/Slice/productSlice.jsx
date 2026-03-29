@@ -68,7 +68,7 @@ const productSlice = createSlice({
   }
 
   state.next = action.payload.next
-    ? action.payload.next.replace("http://127.0.0.1:8000/api/", "")
+    ? action.payload.next.replace("${api}/api/", "")
     : null;
 })
       .addCase(fetchProducts.rejected, (state, action) => {

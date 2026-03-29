@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./Register.css";
+import api from "../Redux/axios.jsx";
 
 function Register() {
 
@@ -35,7 +36,7 @@ function Register() {
   }
 
   try {
-    const response = await fetch("http://127.0.0.1:8000/api/auth/register/", {
+    const response = await fetch("${api}/api/auth/register/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"

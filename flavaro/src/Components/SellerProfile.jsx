@@ -132,7 +132,7 @@ function Profile() {
               <img
                 src={
                   product.images && product.images.length
-                    ? `http://127.0.0.1:8000${product.images[0]}`
+                    ? `${api}${product.images[0]}`
                     : ""
                 }
                 alt={product.title}

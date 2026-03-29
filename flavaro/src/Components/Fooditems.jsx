@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchProducts } from "../Redux/Slice/productSlice";
 import FoodCard from './Foodcard';
+import api from "../Redux/axios.jsx";
 
 function FoodItems() {
   const dispatch = useDispatch();
@@ -48,7 +49,7 @@ function FoodItems() {
             category={food.category}
             img={
               food.images && food.images.length
-                ? `http://127.0.0.1:8000${food.images[0]}`
+                ? `${api}${food.images[0]}`
                 : null
             }
             rating={4.5}
