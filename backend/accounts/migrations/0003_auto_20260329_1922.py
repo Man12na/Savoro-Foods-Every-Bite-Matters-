@@ -1,8 +1,7 @@
 from django.db import migrations
-from django.contrib.auth.models import User
 
 def create_admin_user(apps, schema_editor):
-    # Only create if admin does not already exist
+    User = apps.get_model("auth", "User")  # use historical model
     if not User.objects.filter(username="admin").exists():
         User.objects.create_superuser(
             username="admin",
@@ -13,7 +12,8 @@ def create_admin_user(apps, schema_editor):
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('accounts', '0002_auto_20260329_1920'),  # replace with the previous migration of accounts
+        ('accounts', '0002_auto_20260329_1920'),  # previous migration
+        ('auth', '0012_alter_user_first_name_max_length'),  # make sure auth migrations are applied first
     ]
 
     operations = [
