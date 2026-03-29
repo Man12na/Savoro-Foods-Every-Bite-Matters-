@@ -1,0 +1,25 @@
+.categoryMenu{
+  margin-top:50px;
+}
+.categoryMenu > h2{
+  font-weight: 450;
+  font-size: 22px;
+}
+.category{
+  display:flex;
+  gap:10px;
+  height: 40px;
+  
+}
+.category button{
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 18px;
+  border-style: none;
+  background: #D6D5DE;
+  
+}
+.category button:focus{
+  background: rgb(8,190,10);
+  color:white;
+}

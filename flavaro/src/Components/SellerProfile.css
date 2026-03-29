@@ -1,0 +1,188 @@
+/* Page Layout */
+body{
+  background:#f5f7fb;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Profile Container */
+.profile-container{
+  display:flex;
+  justify-content:center;
+  margin-top:40px;
+}
+
+.profile-container h2{
+  text-align:center;
+}
+
+/* Profile Card */
+.profile-card{
+  background:white;
+  padding:25px;
+  border-radius:10px;
+  width:350px;
+  box-shadow:0 4px 10px rgba(0,0,0,0.1);
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+/* Inputs */
+.profile-card input{
+  padding:8px;
+  border:1px solid #ddd;
+  border-radius:6px;
+  font-size:14px;
+}
+
+.profile-card label{
+  font-weight:600;
+  font-size:14px;
+}
+
+/* Buttons */
+.edit-btn{
+  margin-top:10px;
+  padding:10px;
+  background:#007bff;
+  border:none;
+  color:white;
+  border-radius:6px;
+  cursor:pointer;
+}
+
+.edit-btn:hover{
+  background:#0056b3;
+}
+
+.save-btn{
+  margin-top:10px;
+  padding:10px;
+  background:#28a745;
+  border:none;
+  color:white;
+  border-radius:6px;
+  cursor:pointer;
+}
+
+.save-btn:hover{
+  background:#1e7e34;
+}
+
+/* Seller Products Section */
+
+.seller-products{
+  margin:50px auto;
+  max-width:1000px;
+  padding:20px;
+}
+
+/* Header */
+.header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:20px;
+}
+
+.header h2{
+  margin:0;
+}
+
+/* Add Button */
+.add-btn{
+  padding:10px 16px;
+  background:#ff7a00;
+  border:none;
+  color:white;
+  border-radius:6px;
+  cursor:pointer;
+  font-weight:600;
+}
+
+.add-btn:hover{
+  background:#e56700;
+}
+
+/* Product Grid */
+.product-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:20px;
+}
+
+/* Product Card */
+
+.product-card{
+  background:white;
+  border-radius:10px;
+  padding:15px;
+  text-align:center;
+  box-shadow:0 4px 10px rgba(0,0,0,0.1);
+  transition:0.2s;
+}
+
+.product-card:hover{
+  transform:translateY(-5px);
+}
+
+/* Image */
+
+.product-card img{
+  object-fit:cover;
+  border-radius:6px;
+  margin-bottom:10px;
+}
+
+/* Product Name */
+
+.product-card h3{
+  margin:5px 0;
+  font-size:16px;
+}
+
+/* Price */
+
+.product-card p{
+  color:#555;
+  font-size:14px;
+}
+
+/* Action Buttons */
+
+.actions{
+  margin-top:10px;
+  display:flex;
+  justify-content:center;
+  gap:10px;
+}
+
+.actions button{
+  padding:6px 10px;
+  border:none;
+  border-radius:5px;
+  cursor:pointer;
+  font-size:13px;
+}
+
+/* Edit */
+
+.actions button:first-child{
+  background:#17a2b8;
+  color:white;
+}
+
+.actions button:first-child:hover{
+  background:#117a8b;
+}
+
+/* Delete */
+
+.actions button:last-child{
+  background:#dc3545;
+  color:white;
+}
+
+.actions button:last-child:hover{
+  background:#a71d2a;
+}
