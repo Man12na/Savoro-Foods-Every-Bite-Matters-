@@ -12,10 +12,14 @@ def create_admin_user(apps, schema_editor):
 
 class Migration(migrations.Migration):
 
-    dependencies = [
-        ('accounts', '0001_initial'),  # point to the migration that exists on Render
-        ('auth', '0012_alter_user_first_name_max_length'),  # auth dependency
-    ]
+    #dependencies = [
+     #   ('accounts', '0001_initial'),  # point to the migration that exists on Render
+      #  ('auth', '0012_alter_user_first_name_max_length'),  # auth dependency
+   # ]
+   dependencies = [
+    ('accounts', '0002_customerprofile_sellerprofile'),  # latest valid migration
+    ('auth', '0012_alter_user_first_name_max_length'),
+]
 
     operations = [
         migrations.RunPython(create_admin_user),
