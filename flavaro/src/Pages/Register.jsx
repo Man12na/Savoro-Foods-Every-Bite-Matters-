@@ -30,32 +30,19 @@ function Register() {
 
   let payload = { ...formData };
 
-  // If NOT seller remove store fields
   if (!payload.is_seller) {
     delete payload.store_name;
   }
 
   try {
-    const response = await fetch("${api}/api/auth/register/", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(payload)
-    });
+    const response = await api.post("/api/auth/register/", payload);
 
-    const data = await response.json();
-
-    if (response.ok) {
-      alert("Registration successful!");
-      console.log(data);
-    } else {
-      alert(JSON.stringify(data));
-      console.log(data);
-    }
+    alert("Registration successful!");
+    console.log(response.data);
 
   } catch (error) {
-    console.error(error);
+    console.error(error.response?.data || error.message);
+    alert(JSON.stringify(error.response?.data));
   }
 };
   return (
@@ -141,7 +128,7 @@ function Register() {
 
 
             <textarea
-              name="address"
+              name="store_address"
               placeholder="Store Address"
               onChange={handleChange}
               required

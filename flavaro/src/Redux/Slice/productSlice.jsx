@@ -68,7 +68,10 @@ const productSlice = createSlice({
   }
 
   state.next = action.payload.next
-    ? action.payload.next.replace("${api}/api/", "")
+    ? action.payload.next.replace(
+  `${import.meta.env.VITE_API_URL}/api/`,
+  ""
+);
     : null;
 })
       .addCase(fetchProducts.rejected, (state, action) => {
