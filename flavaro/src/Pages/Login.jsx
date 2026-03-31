@@ -11,7 +11,7 @@ function Login(){
 
   const handleLogin = async (e) =>{
     e.preventDefault();
-
+    console.log("API URL:", import.meta.env.VITE_API_URL);
     const username = e.target.username.value;
     const password = e.target.password.value;
 
