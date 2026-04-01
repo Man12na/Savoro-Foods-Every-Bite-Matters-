@@ -48,10 +48,10 @@ function FoodItems() {
             desc={food.description}
             category={food.category}
             img={
-              food.images && food.images.length
-                ? `${api}${food.images[0]}`
-                : null
-            }
+  food.images && food.images.length
+    ? `${import.meta.env.VITE_API_URL.replace("/api","")}${food.images[0]}`
+    : null
+}
             rating={4.5}
           />
         ))}
