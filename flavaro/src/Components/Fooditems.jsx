@@ -39,22 +39,26 @@ function FoodItems() {
           gap: "15px",
         }}
       >
-        {product.list.map((food) => (
-          <FoodCard
-            key={food.id}
-            id={food.id}
-            name={food.title}
-            price={food.price}
-            desc={food.description}
-            category={food.category}
-            img={
-  food.images && food.images.length
-    ? `${import.meta.env.VITE_API_URL.replace("/api","")}${food.images[0]}`
-    : null
-}
-            rating={4.5}
-          />
-        ))}
+       {product.list.map((food) => {
+  console.log(food.images);
+
+  return (
+    <FoodCard
+      key={food.id}
+      id={food.id}
+      name={food.title}
+      price={food.price}
+      desc={food.description}
+      category={food.category}
+      img={
+        food.images && food.images.length
+          ? `https://manasa-savoro-backend.onrender.com${food.images[0]}`
+          : null
+      }
+      rating={4.5}
+    />
+  );
+})}
       </div>
 
       {/* Load More button */}
