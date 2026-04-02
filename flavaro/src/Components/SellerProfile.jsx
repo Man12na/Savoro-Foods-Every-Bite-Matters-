@@ -128,17 +128,13 @@ function Profile() {
         <div className="product-grid">
           {profile.products?.map((product) => (
             <div className="product-card" key={product.id}>
-             
+              
               <img
-                src={
-                  product.images && product.images.length
-                    ? `${api}${product.images[0]}`
-                    : ""
-                }
-                alt={product.title}
-                width="80"
-                height="80"
-              />
+  src={product.images && product.images.length ? product.images[0] : ""}
+  alt={product.title}
+  width="80"
+  height="80"
+/>
               <h3>{product.title}</h3>
               <p>Price: ₹{product.price}</p>
               <p>stock: {product.stock}</p>
