@@ -51,10 +51,10 @@ function FoodItems() {
       desc={food.description}
       category={food.category}
       img={
-        food.images && food.images.length
-          ? `https://manasa-savoro-backend.onrender.com${food.images[0]}`
-          : null
-      }
+  food.images && food.images.length
+    ? food.images[0]
+    : null
+}
       rating={4.5}
     />
   );
