@@ -51,9 +51,17 @@ class UserViewset(viewsets. ReadOnlyModelViewSet):
 
     
 
+#class RegisterView(generics.CreateAPIView):
+ # queryset=User.objects.all()
+ # serializer_class=RegisterSerializer
+ # permission_classes=[permissions.AllowAny]
+
+@method_decorator(csrf_exempt, name="dispatch")
 class RegisterView(generics.CreateAPIView):
-  queryset=User.objects.all()
-  serializer_class=RegisterSerializer
-  permission_classes=[permissions.AllowAny]
+    queryset = User.objects.all()
+    serializer_class = RegisterSerializer
+
+    permission_classes = [permissions.AllowAny]
+    authentication_classes = []
   
   
