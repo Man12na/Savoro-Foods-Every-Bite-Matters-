@@ -78,12 +78,12 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-#CORS_ALLOW_ALL_ORIGINS = True
-CSRF_TRUSTED_ORIGINS = [
-    "https://savoro-foods-every-bite-matters-7n5gub63t-man12nas-projects.vercel.app",
-    "https://savoro-foods-every-bite-matters-bw0g2xaug-man12nas-projects.vercel.app/",
-    "https://savoro-foods-every-bite-matters-git-main-man12nas-projects.vercel.app/",
-]
+CORS_ALLOW_ALL_ORIGINS = True
+#CSRF_TRUSTED_ORIGINS = [
+ #   "https://savoro-foods-every-bite-matters-7n5gub63t-man12nas-projects.vercel.app",
+  #  "https://savoro-foods-every-bite-matters-bw0g2xaug-man12nas-projects.vercel.app/",
+  #  "https://savoro-foods-every-bite-matters-git-main-man12nas-projects.vercel.app/",
+#]
 
 # REST Framework
 REST_FRAMEWORK = {
