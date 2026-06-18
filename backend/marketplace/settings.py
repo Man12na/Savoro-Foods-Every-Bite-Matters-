@@ -79,9 +79,9 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 CORS_ALLOW_ALL_ORIGINS = True
-CSRF_TRUSTED_ORIGINS = [
-    "https://*.vercel.app",
-]
+#CSRF_TRUSTED_ORIGINS = [
+#    "https://*.vercel.app",
+#]
 
 # REST Framework
 REST_FRAMEWORK = {
