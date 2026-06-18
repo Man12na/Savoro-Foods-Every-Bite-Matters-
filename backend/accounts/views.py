@@ -7,6 +7,9 @@ from rest_framework_simplejwt.views import TokenObtainPairView
 from .serializer import MyTokenObtainSerializer, UserSeializer, ProfileSerializer, RegisterSerializer, SellerProfileSerializer, CustomerProfileSerializer
 from .models import Profile
 from rest_framework import status
+from django.utils.decorators import method_decorator
+from django.views.decorators.csrf import csrf_exempt
+
 
 # Create your views here.
 User=get_user_model()
