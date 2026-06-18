@@ -35,7 +35,7 @@ function Register() {
   }
 
   try {
-    const response = await api.post("/api/auth/register/", payload);
+    const response = await api.post("/auth/register/", payload);
 
     alert("Registration successful!");
     console.log(response.data);
