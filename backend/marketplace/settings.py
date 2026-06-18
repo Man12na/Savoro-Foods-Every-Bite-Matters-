@@ -82,6 +82,7 @@ MIDDLEWARE = [
 CSRF_TRUSTED_ORIGINS = [
     "https://savoro-foods-every-bite-matters-7n5gub63t-man12nas-projects.vercel.app",
     "https://savoro-foods-every-bite-matters-bw0g2xaug-man12nas-projects.vercel.app/",
+    "https://savoro-foods-every-bite-matters-git-main-man12nas-projects.vercel.app/",
 ]
 
 # REST Framework
