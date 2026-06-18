@@ -18,9 +18,17 @@ api.interceptors.request.use((config) => {
 // RESPONSE INTERCEPTOR
 api.interceptors.response.use(
   (response) => response,
-  async (error) => {
 
+  async (error) => {
     const originalRequest = error.config;
+
+    // Don't redirect for login or register errors
+    if (
+      originalRequest?.url?.includes("auth/token") ||
+      originalRequest?.url?.includes("auth/register")
+    ) {
+      return Promise.reject(error);
+    }
 
     if (error.response?.status === 401 && !originalRequest._retry) {
 
@@ -37,7 +45,7 @@ api.interceptors.response.use(
       try {
 
         const res = await api.post(
-          "/api/auth/token/refresh/",
+          "/auth/token/refresh/",
           { refresh }
         );
 
@@ -45,7 +53,8 @@ api.interceptors.response.use(
 
         localStorage.setItem("access", newAccess);
 
-        originalRequest.headers.Authorization = `Bearer ${newAccess}`;
+        originalRequest.headers.Authorization =
+          `Bearer ${newAccess}`;
 
         return api(originalRequest);
 
@@ -54,6 +63,7 @@ api.interceptors.response.use(
         localStorage.clear();
         window.location.href = "/login";
 
+        return Promise.reject(err);
       }
     }
 
