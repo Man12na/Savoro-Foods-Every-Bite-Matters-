@@ -7,8 +7,6 @@ from rest_framework_simplejwt.views import TokenObtainPairView
 from .serializer import MyTokenObtainSerializer, UserSeializer, ProfileSerializer, RegisterSerializer, SellerProfileSerializer, CustomerProfileSerializer
 from .models import Profile
 from rest_framework import status
-from django.utils.decorators import method_decorator
-from django.views.decorators.csrf import csrf_exempt
 
 
 # Create your views here.
@@ -54,17 +52,9 @@ class UserViewset(viewsets. ReadOnlyModelViewSet):
 
     
 
-#class RegisterView(generics.CreateAPIView):
- # queryset=User.objects.all()
- # serializer_class=RegisterSerializer
- # permission_classes=[permissions.AllowAny]
-
-@method_decorator(csrf_exempt, name="dispatch")
 class RegisterView(generics.CreateAPIView):
-    queryset = User.objects.all()
-    serializer_class = RegisterSerializer
+  queryset=User.objects.all()
+  serializer_class=RegisterSerializer
+  permission_classes=[permissions.AllowAny]
 
-    permission_classes = [permissions.AllowAny]
-    authentication_classes = []
-  
-  
+
